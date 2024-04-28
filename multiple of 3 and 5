@@ -1,0 +1,13 @@
+def sum_of_multiples_of_3_or_5_below_N(N):
+  N -= 1  # Adjust N to exclude N itself
+  sum_of_3 = (3 * (N // 3) * (N // 3 + 1)) // 2
+  sum_of_5 = (5 * (N // 5) * (N // 5 + 1)) // 2
+  sum_of_15 = (15 * (N // 15) * (N // 15 + 1)) // 2
+  total_sum = sum_of_3 + sum_of_5 - sum_of_15
+  return total_sum
+
+# Input reading
+num_test_cases = int(input())
+for _ in range(num_test_cases):
+  N = int(input())
+  print(sum_of_multiples_of_3_or_5_below_N(N))
